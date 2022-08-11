@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { AddCategory, GiftGrid } from './components';
+import { AddCategory, GifGrid } from './components';
 
-export const GiftExpertApp = () => {
+export const GifExpertApp = () => {
 
   const [categories, setCategories] = useState(['Cats']);
 
@@ -24,7 +24,7 @@ export const GiftExpertApp = () => {
 
         {
           categories.map(category => (
-            <GiftGrid
+            <GifGrid
               key={category}
               category={category}
             />

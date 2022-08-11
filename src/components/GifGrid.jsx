@@ -1,8 +1,8 @@
-import { GiftItem } from './GiftItem.jsx';
+import { GifItem } from './GifItem.jsx';
 import { useFetchGifs } from '../hooks/useFetchGifs.js';
+import {PropTypes} from 'prop-types'
 
-
-export const GiftGrid = ({ category }) => {
+export const GifGrid = ({ category }) => {
 
     const { images, isLoading } = useFetchGifs(category);
 
@@ -16,7 +16,7 @@ export const GiftGrid = ({ category }) => {
             <div className='card-grid'>
                 {
                     images.map((image) => (
-                        <GiftItem
+                        <GifItem
                             key={image.id}
                             {...image}
                         />
@@ -25,4 +25,10 @@ export const GiftGrid = ({ category }) => {
             </div>
         </>
     )
+}
+
+GifGrid.propTypes = {
+
+    category: PropTypes.string.isRequired
+
 }
